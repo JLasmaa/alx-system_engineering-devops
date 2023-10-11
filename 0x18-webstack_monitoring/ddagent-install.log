@@ -1,0 +1,98 @@
+[34m
+* Datadog Agent install script v1.13.0.deprecated
+[0m
+[33mWarning: DD_AGENT_MAJOR_VERSION not set. Installing Datadog Agent version 6 by default.[0m
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Hit:1 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:6 https://deb.nodesource.com/node_14.x focal InRelease
+Ign:7 https://apt.datadoghq.com stable InRelease
+Get:8 https://apt.datadoghq.com stable Release [17.8 kB]
+Get:9 https://apt.datadoghq.com stable Release.gpg [801 B]
+Fetched 18.6 kB in 9s (2,112 B/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.68.0-1ubuntu2.20).
+gnupg is already the newest version (2.2.19-3ubuntu2.2).
+apt-transport-https is already the newest version (2.0.9).
+0 upgraded, 0 newly installed, 0 to remove and 239 not upgraded.
+1 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Setting up datadog-signing-keys (1:1.3.1-1) ...
+[34m
+* Installing APT package sources for Datadog
+[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  30975      0 --:--:-- --:--:-- --:--:-- 30975
+gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  47892      0 --:--:-- --:--:-- --:--:-- 47892
+gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  43274      0 --:--:-- --:--:-- --:--:-- 78269
+gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+[34m
+* Installing the Datadog Agent package
+[0m
+Ign:1 https://apt.datadoghq.com stable InRelease
+Get:2 https://apt.datadoghq.com stable Release [17.8 kB]
+Get:3 https://apt.datadoghq.com stable Release.gpg [801 B]
+Fetched 18.6 kB in 1s (18.1 kB/s)
+Reading package lists...
+  [33mInstalling package(s): datadog-agent datadog-signing-keys
+[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+datadog-signing-keys is already the newest version (1:1.3.1-1).
+The following NEW packages will be installed:
+  datadog-agent
+0 upgraded, 1 newly installed, 0 to remove and 239 not upgraded.
+Need to get 455 MB of archives.
+After this operation, 1,506 MB of additional disk space will be used.
+Get:1 https://apt.datadoghq.com stable/6 amd64 datadog-agent amd64 1:6.48.0-1 [455 MB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 455 MB in 59s (7,653 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 81436 files and directories currently installed.)
+Preparing to unpack .../datadog-agent_1%3a6.48.0-1_amd64.deb ...
+Unpacking datadog-agent (1:6.48.0-1) ...
+dpkg: error processing archive /var/cache/apt/archives/datadog-agent_1%3a6.48.0-1_amd64.deb (--unpack):
+ unable to create '/opt/datadog-agent/embedded/lib/python3.9/site-packages/botocore/data/managedblockchain-query/2023-05-04/endpoint-rule-set-1.json.gz.dpkg-new' (while processing './opt/datadog-agent/embedded/lib/python3.9/site-packages/botocore/data/managedblockchain-query/2023-05-04/endpoint-rule-set-1.json.gz'): Disk quota exceeded
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Errors were encountered while processing:
+ /var/cache/apt/archives/datadog-agent_1%3a6.48.0-1_amd64.deb
+W: --force-yes is deprecated, use one of the options starting with --allow instead.
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+[31mERROR
+Failed to install the datadog-agent package, sometimes it may be
+due to another APT source failing. See the logs above to
+determine the cause.
+If the cause is unclear, please contact Datadog support.
+*****
+
+It looks like you hit an issue when trying to install the Datadog Agent.
+
+Troubleshooting and basic usage information for the Datadog Agent are available at:
+
+    https://docs.datadoghq.com/agent/basic_agent_usage/
+[0m
+Do you want to send a failure report to Datadog (including ddagent-install.log)? (y/[n]) 
+If you are still having problems, please send an email to support@datadoghq.com
+with the contents of ddagent-install.log and any information you think would be
+useful and we will do our very best to help you solve your problem.
